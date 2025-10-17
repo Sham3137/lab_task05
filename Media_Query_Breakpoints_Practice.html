@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Breakpoints Practice</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            width: 100%;
+            padding: 50px 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        /* Mobile First (0px - 767px) */
+        .box {
+            background-color: #3498db;
+        }
+
+        /* Tablet (768px and up) */
+        @media (min-width: 768px) {
+            .box {
+                background-color: #2ecc71;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Small Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            .box {
+                background-color: #e67e22;
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Large Desktop (1200px and up) */
+        @media (min-width: 1200px) {
+            .box {
+                background-color: #9b59b6;
+                font-size: 2rem;
+            }
+        }
+
+        /* Extra Large (1400px and up) */
+        @media (min-width: 1400px) {
+            .box {
+                background-color: #1abc9c;
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Media Query Breakpoints Practice</h1>
+
+    <div class="box">Resize the window to see breakpoint changes</div>
+    <div class="box">Mobile → Tablet → Small Desktop → Large Desktop → Extra Large</div>
+
+</body>
+</html>

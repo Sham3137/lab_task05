@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox Navigation System</title>
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/flexbox.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+  <link rel="stylesheet" href="../styles/utilities.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="logo">MySite</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Design</a></li>
+          <li><a href="#">Development</a></li>
+          <li><a href="#">SEO</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Analytics</a></li>
+      <li class="dropdown">
+        <a href="#">Settings</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </aside>
+  <main class="main-content">
+    <h1>Welcome to Flexbox Navigation System Demo</h1>
+    <p>This is an example of responsive flexbox navigation with hamburger menu and sidebar.</p>
+  </main>
+  <script src="../scripts/flexbox-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning Challenge</title>
+  <link rel="stylesheet" href="../styles/position.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Positioning Challenge</h1>
+    <button class="open-modal">Open Modal</button>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sticky-box">Sticky Sidebar Box</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, incidunt.</p>
+      <p>Voluptate facere perspiciatis nemo pariatur adipisci doloremque unde nostrum.</p>
+    </aside>
+
+    <main class="content">
+      <section>
+        <h2>Main Content Area</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam consequatur eum exercitationem ipsam aspernatur sequi nam!</p>
+        <p>Reprehenderit magni obcaecati odit corrupti accusantium numquam temporibus veniam quae!</p>
+        <div class="layer-box box1">Layer 1</div>
+        <div class="layer-box box2">Layer 2</div>
+        <div class="layer-box box3">Layer 3</div>
+        <p>Scroll down to see the sticky effect and modal positioning.</p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal">
+    <div class="modal-content">
+      <h2>Modal Dialog</h2>
+      <p>This is an absolutely positioned modal box.</p>
+      <button class="close-modal">Close</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Positioning Layout</p>
+  </footer>
+
+  <script>
+    const modal = document.querySelector('.modal');
+    document.querySelector('.open-modal').addEventListener('click', ()=>modal.style.display='flex');
+    document.querySelector('.close-modal').addEventListener('click', ()=>modal.style.display='none');
+  </script>
+</body>
+</html>

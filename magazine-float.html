@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Float Layout</title>
+  <link rel="stylesheet" href="../styles/float.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Modern Web Magazine</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li>Latest Articles</li>
+        <li>Trending Topics</li>
+        <li>Interviews</li>
+        <li>Tech Reviews</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <article>
+        <h2>Floating Layouts in Modern CSS</h2>
+        <img src="https://via.placeholder.com/250x150" alt="article image" class="float-left">
+        <p>
+          Floats were one of the earliest ways to build multi-column layouts on the web.
+          Before flexbox and grid, developers used <strong>float</strong> to position content side by side.
+          This article explores how floats can still be used for simple magazine-style layouts.
+        </p>
+        <p>
+          Notice how the text wraps neatly around the image. This is achieved by floating the image
+          to the left and giving it some margin. On smaller screens, we’ll remove the float so that
+          the image appears above the text, creating a clean single-column design.
+        </p>
+      </article>
+
+      <article>
+        <h2>Designing Responsive Columns</h2>
+        <img src="https://via.placeholder.com/250x150" alt="responsive design" class="float-right">
+        <p>
+          Using media queries, we can control how floats behave on different screen sizes.
+          For example, on desktops we can have two columns side by side,
+          while on mobile screens they automatically stack vertically.
+        </p>
+        <p>
+          The key idea is to use percentage-based widths and clear floats when necessary.
+          This gives you a flexible and fluid layout that adapts gracefully to different viewports.
+        </p>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Modern Web Magazine</p>
+  </footer>
+
+</body>
+</html>

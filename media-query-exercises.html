@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Demonstration</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Breakpoint indicator */
+        .breakpoint {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            background-color: #3498db;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+            border-radius: 5px;
+        }
+
+        /* Main content */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            font-size: 1rem;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1024px) {
+            .breakpoint::after {
+                content: " (Tablet Breakpoint: max-width 1024px)";
+            }
+
+            .content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .box h2 {
+                font-size: 1.4rem;
+            }
+
+            .box p {
+                font-size: 0.95rem;
+            }
+
+            nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .breakpoint::after {
+                content: " (Mobile Breakpoint: max-width 768px)";
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .box h2 {
+                font-size: 1.3rem;
+            }
+
+            .box p {
+                font-size: 0.9rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .breakpoint::after {
+                content: " (Small Mobile Breakpoint: max-width 480px)";
+            }
+
+            .box h2 {
+                font-size: 1.2rem;
+            }
+
+            .box p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Media Query Demonstration</h1>
+    <div class="breakpoint">Current Screen Size:</div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Content Boxes -->
+    <div class="content">
+        <div class="box">
+            <h2>Box 1</h2>
+            <p>Responsive grid column 1</p>
+        </div>
+        <div class="box">
+            <h2>Box 2</h2>
+            <p>Responsive grid column 2</p>
+        </div>
+        <div class="box">
+            <h2>Box 3</h2>
+            <p>Responsive grid column 3</p>
+        </div>
+        <div class="box">
+            <h2>Box 4</h2>
+            <p>Additional content box</p>
+        </div>
+        <div class="box">
+            <h2>Box 5</h2>
+            <p>Additional content box</p>
+        </div>
+        <div class="box">
+            <h2>Box 6</h2>
+            <p>Additional content box</p>
+        </div>
+    </div>
+
+</body>
+</html>

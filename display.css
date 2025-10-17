@@ -1,0 +1,46 @@
+/* styles/display.css */
+.block {
+  display: block;
+  background: #cce5ff;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.inline {
+  display: inline;
+  background: #d4edda;
+  margin: 5px;
+  padding: 5px;
+}
+
+.inline-block {
+  display: inline-block;
+  background: #f8d7da;
+  width: 100px;
+  margin: 5px;
+  text-align: center;
+}
+
+.table {
+  display: table;
+  border: 2px solid #333;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid #333;
+}
+
+.hide-mobile {
+  background: #ffebcc;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}

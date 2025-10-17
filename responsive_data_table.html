@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Data Table</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Responsive Card Layout for Tablet */
+        @media (max-width: 1024px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 10px;
+                background-color: #fff;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 8px 10px;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex-basis: 50%;
+                text-align: left;
+            }
+
+            td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        /* Mobile Single Column Layout */
+        @media (max-width: 768px) {
+            td {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            td::before {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Data Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Employee ID">101</td>
+                <td data-label="Name">John Doe</td>
+                <td data-label="Department">IT</td>
+                <td data-label="Position">Developer</td>
+                <td data-label="Salary">$5000</td>
+            </tr>
+            <tr>
+                <td data-label="Employee ID">102</td>
+                <td data-label="Name">Jane Smith</td>
+                <td data-label="Department">Marketing</td>
+                <td data-label="Position">Manager</td>
+                <td data-label="Salary">$6000</td>
+            </tr>
+            <tr>
+                <td data-label="Employee ID">103</td>
+                <td data-label="Name">Mike Johnson</td>
+                <td data-label="Department">Finance</td>
+                <td data-label="Position">Analyst</td>
+                <td data-label="Salary">$5500</td>
+            </tr>
+            <tr>
+                <td data-label="Employee ID">104</td>
+                <td data-label="Name">Emily Davis</td>
+                <td data-label="Department">HR</td>
+                <td data-label="Position">Coordinator</td>
+                <td data-label="Salary">$4800</td>
+            </tr>
+            <tr>
+                <td data-label="Employee ID">105</td>
+                <td data-label="Name">David Wilson</td>
+                <td data-label="Department">IT</td>
+                <td data-label="Position">Support</td>
+                <td data-label="Salary">$4500</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

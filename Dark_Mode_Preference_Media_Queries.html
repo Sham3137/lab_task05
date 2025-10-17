@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preference Media Queries Demo</title>
+<style>
+    /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f2f2f2;
+        color: #333;
+        padding: 20px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    /* Hover animation */
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* ===== Dark/Light Mode ===== */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 8px rgba(255,255,255,0.05);
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .card {
+            background-color: #fff;
+        }
+    }
+
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            transition: none !important;
+            animation: none !important;
+        }
+    }
+
+    /* ===== High Contrast Mode ===== */
+    @media (prefers-contrast: more) {
+        body {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        .card {
+            background-color: #000 !important;
+            border: 2px solid #fff !important;
+            box-shadow: none !important;
+        }
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .card {
+            border: 1px solid #000;
+            box-shadow: none;
+            page-break-inside: avoid;
+        }
+
+        header, footer, nav {
+            display: none;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<h1>Preference Media Queries Demo</h1>
+
+<div class="card">
+    <h2>Dark/Light Mode</h2>
+    <p>This card adapts automatically based on the user's system color scheme.</p>
+</div>
+
+<div class="card">
+    <h2>Reduced Motion</h2>
+    <p>If the user prefers reduced motion, all animations and transitions are disabled.</p>
+</div>
+
+<div class="card">
+    <h2>High Contrast Mode</h2>
+    <p>When high contrast mode is enabled, colors adjust to maximize contrast and readability.</p>
+</div>
+
+<div class="card">
+    <h2>Print Preview</h2>
+    <p>This content is optimized for printing. Headers, footers, and shadows are removed.</p>
+</div>
+
+</body>
+</html>

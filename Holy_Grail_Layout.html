@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout Comparison</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .header, .footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar-left, .sidebar-right {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .main {
+            background-color: #e67e22;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* ===== FLOAT-BASED HOLY GRAIL ===== */
+        .float-layout {
+            overflow: hidden; /* clearfix */
+        }
+
+        .float-layout .sidebar-left {
+            float: left;
+            width: 20%;
+        }
+
+        .float-layout .main {
+            float: left;
+            width: 60%;
+        }
+
+        .float-layout .sidebar-right {
+            float: left;
+            width: 20%;
+        }
+
+        @media (max-width: 768px) {
+            .float-layout .sidebar-left,
+            .float-layout .sidebar-right,
+            .float-layout .main {
+                float: none;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* ===== FLEXBOX HOLY GRAIL ===== */
+        .flex-layout {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flex-layout .sidebar-left,
+        .flex-layout .sidebar-right {
+            flex: 1 1 20%;
+        }
+
+        .flex-layout .main {
+            flex: 1 1 60%;
+        }
+
+        @media (max-width: 768px) {
+            .flex-layout {
+                flex-direction: column;
+            }
+
+            .flex-layout .sidebar-left,
+            .flex-layout .sidebar-right,
+            .flex-layout .main {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* ===== GRID HOLY GRAIL ===== */
+        .grid-layout {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "left main right"
+                "footer footer footer";
+            grid-template-columns: 20% 60% 20%;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+        }
+
+        .grid-layout .header {
+            grid-area: header;
+        }
+
+        .grid-layout .sidebar-left {
+            grid-area: left;
+        }
+
+        .grid-layout .main {
+            grid-area: main;
+        }
+
+        .grid-layout .sidebar-right {
+            grid-area: right;
+        }
+
+        .grid-layout .footer {
+            grid-area: footer;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-areas:
+                    "header"
+                    "left"
+                    "main"
+                    "right"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Holy Grail Layout Implementations</h1>
+
+    <!-- FLOAT-BASED HOLY GRAIL -->
+    <section>
+        <h2>1. Float-Based Layout</h2>
+        <div class="container float-layout">
+            <div class="header">Header</div>
+            <div class="sidebar-left">Left Sidebar</div>
+            <div class="main">Main Content</div>
+            <div class="sidebar-right">Right Sidebar</div>
+            <div class="footer">Footer</div>
+        </div>
+    </section>
+
+    <!-- FLEXBOX HOLY GRAIL -->
+    <section>
+        <h2>2. Flexbox Layout</h2>
+        <div class="container flex-layout">
+            <div class="header">Header</div>
+            <div class="sidebar-left">Left Sidebar</div>
+            <div class="main">Main Content</div>
+            <div class="sidebar-right">Right Sidebar</div>
+            <div class="footer">Footer</div>
+        </div>
+    </section>
+
+    <!-- GRID HOLY GRAIL -->
+    <section>
+        <h2>3. CSS Grid Layout</h2>
+        <div class="container grid-layout">
+            <div class="header">Header</div>
+            <div class="sidebar-left">Left Sidebar</div>
+            <div class="main">Main Content</div>
+            <div class="sidebar-right">Right Sidebar</div>
+            <div class="footer">Footer</div>
+        </div>
+    </section>
+
+</body>
+</html>
